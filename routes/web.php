@@ -40,13 +40,18 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/login', function () {
     return view('pages.login');
-});Route::get('/signup', function () {
+});
+
+Route::get('/signup', function () {
     return view('pages.signup');
+});
+Route::get('/user-appointments', function () {
+    return view('pages.showappointments');
 });
 
 
 Route::post('/book-an-appointment', [AppointmentController::class, 'store'])->name('appointments.store');
-
+Route::get('/user-appointments', [AppointmentController::class, 'showAppointments'])->name('user.appointments');
 // login form get controller
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');

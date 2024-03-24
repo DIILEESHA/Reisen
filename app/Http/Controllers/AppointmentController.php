@@ -21,9 +21,19 @@ class AppointmentController extends Controller
         }
     }
 
+    public function showAppointments()
+    {
+        // Retrieve all appointments
+        $appointments = Appointment::all();
+        
+        // Pass appointments data to the view
+        return view('pages.showappointments', ['appointments' => $appointments]);
+    }
+
 
     public function store(Request $request)
-    {
+{
+    try {
         // Validate the request
         $validatedData = $request->validate([
             'vehicle_name' => 'required|string|max:255',
@@ -39,7 +49,11 @@ class AppointmentController extends Controller
         // Create and save the appointment
         $appointment = Appointment::create($validatedData);
 
-        // Redirect or do something else
-        return redirect()->back()->with('success', 'Appointment booked successfully!');
+        return redirect('/user-appointments')->back()->with('success', 'Appointment booked successfully!');
+    } catch (\Exception $e) {
+        // \Log::error($e->getMessage());
+        // Redirect back with an error message
+        return redirect()->back()->with('error', 'An error occurred while booking the appointment. Please try again later.');
     }
+}
 }

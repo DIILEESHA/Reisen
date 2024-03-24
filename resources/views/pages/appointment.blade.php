@@ -32,20 +32,20 @@
 
             @csrf
             <div class="appointment_input">
-                <label for="">name</label>
-                <input id="vehicle_name" name="vehicle_name" type="text" placeholder="Enter the vehicle name">
+                <label for="">vehicle name</label>
+                <input required id="vehicle_name" name="vehicle_name" type="text" placeholder="Enter the vehicle name">
             </div>
             <div class="appointment_input">
-                <label for="">name</label>
-                <input id="vehicle_mileage" name="vehicle_mileage" type="text" placeholder="Enter the vehicle milege">
+                <label for="">milege </label>
+                <input required id="vehicle_mileage" name="vehicle_mileage" type="text" placeholder="Enter the vehicle milege">
             </div>
 
             <div class="appointment_input">
-                <label for="">APPOINTMENT DATE</label>
-                <input id="appointment_date" name="appointment_date" type="date" placeholder="Enter the vehicle milege">
+                <label for="">Appointment Date</label>
+                <input required id="appointment_date" name="appointment_date" type="date" placeholder="Enter the vehicle milege">
             </div>
             <div class="appointment_input">
-                <label for="">PREFFERED TIME FRAME</label>
+                <label for="">Prefferd Time Frame</label>
                 {{-- <input type="text" id="preferred_time" placeholder="Select preferred time frame"> --}}
                 <select id="preferred_time" name="preferred_time">
                     <!-- Options for times from 9:00 to 18:00 -->
@@ -62,20 +62,20 @@
             </div>
             <div class="appointment_input">
                 <label for="">Your name</label>
-                <input id="customer_name" name="customer_name" type="text" placeholder="Enter the vehicle milege">
+                <input required id="customer_name" name="customer_name" type="text" placeholder="Enter Your Name">
             </div>
             <div class="appointment_input">
                 <label for="">Your email</label>
-                <input name="customer_email" id="customer_email" type="text" placeholder="Enter the vehicle milege">
+                <input required name="customer_email" id="customer_email" type="text" placeholder="Enter Your E-mail">
             </div>
             <div class="appointment_input">
                 <label for="">Your phone</label>
-                <input id="customer_phone" name="customer_phone" type="text" placeholder="Enter the vehicle milege">
+                <input required id="customer_phone" name="customer_phone" type="text" placeholder="Enter Your Phone-nummber">
             </div>
 
 
-            {{-- <div class="appointment_input">
-                <label for="">PREFFERED TIME FRAME</label>
+            <div class="appointment_input">
+                <label for="">Select Service Needed</label>
                 <select id="preferred_way" name="preferred_way">
                     <option value="09:00">Air conditioning</option>
                     <option value="10:00">Brakes repair</option>
@@ -86,10 +86,12 @@
                     <option value="15:00">Transmission Repair</option>
                     <option value="16:00">Wheel Alignment</option>
                 </select>
-            </div> --}}
+            </div>
+
+
             <div class="appointment_input">
-                <label for="">comment</label>
-                <textarea placeholder="Enter the vehicle milege" name="comment" id="comment" cols="30" rows="10"></textarea>
+                <label for="">Enter comment</label>
+                <textarea required placeholder="Enter Your comment | Message" name="comment" id="comment" cols="30" rows="10"></textarea>
             </div>
             <div class="appointment_input">
                 <button type="submit">submit</button>

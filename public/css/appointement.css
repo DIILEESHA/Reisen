@@ -30,7 +30,7 @@
     width: 100%;
 }
 
-.appointment_input select{
+.appointment_input select {
     width: 100%;
     margin-top: 5px;
     padding: 15px 10px;
@@ -46,7 +46,7 @@
     border-radius: 5px;
 }
 
-.appointment_input textarea{
+.appointment_input textarea {
     width: 100%;
     margin-top: 5px;
     padding: 15px 10px;
@@ -64,7 +64,40 @@ input::placeholder {
     font-size: 15px;
     margin-bottom: 10px;
     text-transform: capitalize;
+    color: #888585;
+    font-weight: bold;
 }
-.appointment_input:nth-child(9){
+/* .appointment_input:nth-child(8) {
     grid-column: 1/3;
+}
+.appointment_input:nth-child(9) {
+    grid-column: 1/3;
+} */
+
+.appointment_input:nth-child(11) {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#preferred_way{
+}
+
+
+.appointment_input:nth-child(10) {
+    grid-column: 1/3;
+} 
+
+.appointment_input button {
+    border: none;
+    background-color: #bf2d0d;
+    color: #fff;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px;
+    border-radius: 5px;
+    cursor: pointer;
 }

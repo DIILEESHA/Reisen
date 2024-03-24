@@ -1,0 +1,40 @@
+.show_container {
+    padding: 40px 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.show_grid {
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    gap: 1rem;
+}
+
+.quick {
+    margin-top: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.show_sub {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub_links {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.sub_links h2 {
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: bold;
+}

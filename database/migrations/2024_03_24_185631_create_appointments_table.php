@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('vehicle_mileage');
             $table->dateTime('appointment_date');
             $table->string('preferred_time');
+            $table->string(  'preferred_way');
             $table->string('customer_name');
             $table->string('customer_email');
             $table->string('customer_phone');

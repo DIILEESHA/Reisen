@@ -32,11 +32,23 @@ Route::get('/service', function () {
     return view('pages.service');
 });
 
+Route::get('/update-form', function () {
+    return view('pages.edit');
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/book-an-appointment', function () {
         return view('pages.appointment');
     });
 });
+
+
+
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/dashboard', [AppointmentController::class, 'showAllAppointments'])->name('admin.dashboard');
+// });
+
 
 Route::get('/login', function () {
     return view('pages.login');
@@ -48,13 +60,20 @@ Route::get('/signup', function () {
 Route::get('/user-appointments', function () {
     return view('pages.showappointments');
 });
-
-
+// dashboard
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+Route::get('/dashboard', [AppointmentController::class, 'showAppointment'])->name('dashboard');
 Route::post('/book-an-appointment', [AppointmentController::class, 'store'])->name('appointments.store');
 Route::get('/user-appointments', [AppointmentController::class, 'showAppointments'])->name('user.appointments');
 Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+Route::get('/appointments/{id}/edit', [AppointmentController::class, 'showEditForm'])->name('appointments.edit');
+Route::put('/appointments/{id}', [AppointmentController::class, 'update'])->name('appointments.update');
+
 
 // login form get controller
+// Route::get('/dashboard', [AuthController::class, 'showDashboard'])->name('dashboard');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -10,6 +10,19 @@ class AuthController extends Controller
 {
 
 
+
+
+
+    public function showDashboard()
+    {
+        // Fetch all registered users
+        $users = User::all();
+        
+        // Pass user data to the dashboard view
+        return view('dashboard', ['users' => $users]);
+    }
+
+    
     // show login form
     public function showLoginForm()
     {
@@ -25,6 +38,12 @@ class AuthController extends Controller
                     'email' => 'required|email',
                     'password' => 'required',
                 ]);
+
+                  // Check if the user is an admin
+                if ($credentials['email'] === 'admin@gmail.com' && $credentials['password'] === 'admin12345') {
+                // Redirect to the admin dashboard or any other admin-specific page
+                return redirect('/dashboard');
+                }
     
                 // Attempt to authenticate the user
                 if (Auth::attempt($credentials, $request->has('remember'))) {

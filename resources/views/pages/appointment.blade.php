@@ -33,16 +33,19 @@
             @csrf
             <div class="appointment_input">
                 <label for="">vehicle name</label>
-                <input required id="vehicle_name" name="vehicle_name" type="text" placeholder="Enter the vehicle name">
+                <input required id="vehicle_name" name="vehicle_name" type="text"
+                    placeholder="Enter the vehicle name">
             </div>
             <div class="appointment_input">
                 <label for="">milege </label>
-                <input required id="vehicle_mileage" name="vehicle_mileage" type="text" placeholder="Enter the vehicle milege">
+                <input required id="vehicle_mileage" name="vehicle_mileage" type="text"
+                    placeholder="Enter the vehicle milege">
             </div>
 
             <div class="appointment_input">
                 <label for="">Appointment Date</label>
-                <input required id="appointment_date" name="appointment_date" type="date" placeholder="Enter the vehicle milege">
+                <input required id="appointment_date" name="appointment_date" type="date"
+                    placeholder="Enter the vehicle milege">
             </div>
             <div class="appointment_input">
                 <label for="">Prefferd Time Frame</label>
@@ -66,32 +69,35 @@
             </div>
             <div class="appointment_input">
                 <label for="">Your email</label>
-                <input required name="customer_email" id="customer_email" type="text" placeholder="Enter Your E-mail">
+                <input required name="customer_email" id="customer_email" type="text"
+                    placeholder="Enter Your E-mail">
             </div>
             <div class="appointment_input">
                 <label for="">Your phone</label>
-                <input required id="customer_phone" name="customer_phone" type="text" placeholder="Enter Your Phone-nummber">
+                <input required id="customer_phone" name="customer_phone" type="text"
+                    placeholder="Enter Your Phone-nummber">
             </div>
 
 
             <div class="appointment_input">
                 <label for="">Select Service Needed</label>
                 <select id="preferred_way" name="preferred_way">
-                    <option value="09:00">Air conditioning</option>
-                    <option value="10:00">Brakes repair</option>
-                    <option value="11:00">Engine repair </option>
-                    <option value="12:00">Heating & Cooling</option>
-                    <option value="13:00">Oil Lube & Filters</option>
-                    <option value="14:00">Steering & Suspensions</option>
-                    <option value="15:00">Transmission Repair</option>
-                    <option value="16:00">Wheel Alignment</option>
+                    <option value="Air conditioning">Air conditioning</option>
+                    <option value="Brakes repair">Brakes repair</option>
+                    <option value="Engine repair">Engine repair </option>
+                    <option value="Heating & Cooling">Heating & Cooling</option>
+                    <option value="Oil Lube & Filters">Oil Lube & Filters</option>
+                    <option value="Steering & Suspensions">Steering & Suspensions</option>
+                    <option value="Transmission Repair">Transmission Repair</option>
+                    <option value="Wheel Alignment">Wheel Alignment</option>
                 </select>
             </div>
 
 
             <div class="appointment_input">
                 <label for="">Enter comment</label>
-                <textarea required placeholder="Enter Your comment | Message" name="comment" id="comment" cols="30" rows="10"></textarea>
+                <textarea required placeholder="Enter Your comment | Message" name="comment" id="comment" cols="30"
+                    rows="10"></textarea>
             </div>
             <div class="appointment_input">
                 <button type="submit">submit</button>

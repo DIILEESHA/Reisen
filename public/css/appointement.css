@@ -43,6 +43,9 @@
     margin-top: 5px;
     padding: 15px 10px;
     border: 1px solid #888888;
+    font-family: "poppins", sans-serif;
+    color: #888585;
+    font-size: 15px;
     border-radius: 5px;
 }
 
@@ -52,6 +55,8 @@
     padding: 15px 10px;
     border: 1px solid #888888;
     border-radius: 5px;
+    color: #888585;
+    font-size: 15px;
 }
 
 input::placeholder {
@@ -81,13 +86,23 @@ input::placeholder {
     align-items: flex-end;
 }
 
-#preferred_way{
+.pp {
+    grid-column: 1/3;
 }
 
+.ll{
+    grid-column: 1/3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;  
+}
+
+#preferred_way {
+}
 
 .appointment_input:nth-child(10) {
     grid-column: 1/3;
-} 
+}
 
 .appointment_input button {
     border: none;

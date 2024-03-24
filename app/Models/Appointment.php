@@ -18,6 +18,6 @@ class Appointment extends Model
         'customer_email',
         'customer_phone',
         'comment',
-        'preferred_way'
+        'preferred_way',
     ];
 }

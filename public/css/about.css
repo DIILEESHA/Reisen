@@ -1,0 +1,36 @@
+.about_header {
+    background-image: url("https://images.pexels.com/photos/4488660/pexels-photo-4488660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.abouter {
+    font-size: 55px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.dg {
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+}
+
+.about_fg {
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    display: flex;
+    gap: 10px;
+    text-transform: capitalize;
+}

@@ -1,0 +1,127 @@
+.blur-container {
+    height: 100vh;
+    position: relative;
+    font-family: "poppins", sans-serif;
+}
+
+.img_section {
+    background-image: url("https://images.pexels.com/photos/5628260/pexels-photo-5628260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    filter: blur(2px);
+}
+
+.content_section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.content_section {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.title {
+    font-size: 55px;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.para {
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+.book {
+    padding: 10px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: "poppins", sans-serif;
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #ddd;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jk {
+    position: relative;
+    margin: 0 20px 0px 0px;
+    width: fit-content;
+    /* margin: 0 auto; */
+}
+
+.jk::after {
+    position: absolute;
+    background-color: teal;
+    background-color: #bf2d0d;
+    height: 100%;
+    width: 100%;
+    content: "";
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 40%;
+    transform: rotate(2deg);
+}
+
+.but {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book:hover {
+    background-color: teal;
+    background-color: #bf2d0d;
+    border: 1px solid transparent;
+}
+
+.appointement {
+    background-color: rgb(228, 230, 232);
+position: relative;
+z-index: 19;
+padding: 50px 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.appointement h2 {
+    color: #7c7979;
+    font-size: 20px;
+}
+.apoint_btn {
+    background-color: teal;
+    background-color: #bf2d0d;
+    color: #ddd;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: "poppins", sans-serif;
+    letter-spacing: 1px;
+    padding: 15px 20px;
+    font-size: 17px;
+    text-transform: capitalize;
+}

@@ -66,7 +66,6 @@
                                 <th scope="col">Appointment Date</th>
                                 <th scope="col">Preferred Time</th>
                                 <th scope="col">Actions</th>
-                                <!-- Add more columns as needed -->
                             </tr>
                         </thead>
                         <tbody>
@@ -93,7 +92,6 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <!-- Add more columns as needed -->
                                 </tr>
                             @endforeach
                         </tbody>

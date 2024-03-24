@@ -23,56 +23,52 @@ class AppointmentController extends Controller
 
     public function showAppointments()
     {
-        // Retrieve all appointments
-        $appointments = Appointment::all();
-        
+        // Retrieve appointments only for the authenticated user
+        $userAppointments = Auth::user()->appointments;
+
         // Pass appointments data to the view
-        return view('pages.showappointments', ['appointments' => $appointments]);
+        return view('pages.showappointments', ['appointments' => $userAppointments]);
     }
 
 
     public function store(Request $request)
-{
-    try {
-        // Validate the request
-        $validatedData = $request->validate([
-            'vehicle_name' => 'required|string|max:255',
-            'vehicle_mileage' => 'required|string|max:255',
-            'appointment_date' => 'required|date',
-            'preferred_time' => 'required|string|max:255',
-            'customer_name' => 'required|string|max:255',
-            'customer_email' => 'required|email|max:255',
-            'customer_phone' => 'required|string|max:255',
-            'comment' => 'nullable|string',
-        ]);
+    {
+        try {
+            // Validate the request
+            $validatedData = $request->validate([
+                'vehicle_name' => 'required|string|max:255',
+                'vehicle_mileage' => 'required|string|max:255',
+                'appointment_date' => 'required|date',
+                'preferred_time' => 'required|string|max:255',
+                'customer_name' => 'required|string|max:255',
+                'customer_email' => 'required|email|max:255',
+                'customer_phone' => 'required|string|max:255',
+                'comment' => 'nullable|string',
+            ]);
 
-        // Create and save the appointment
-        $appointment = Appointment::create($validatedData);
-        return redirect('/user-appointments')->back()->with('success', 'Appointment booked successfully!');
-    } catch (\Exception $e) {
-        // \Log::error($e->getMessage());
-        // Redirect back with an error message
-        return redirect()->back()->with('error', 'An error occurred while booking the appointment. Please try again later.');
+            // Create and save the appointment associated with the authenticated user
+            $appointment = Auth::user()->appointments()->create($validatedData);
+            return redirect('/user-appointments')->with('success', 'Appointment booked successfully!');
+        } catch (\Exception $e) {
+            // Handle errors
+            return redirect()->back()->with('error', 'An error occurred while booking the appointment. Please try again later.');
+        }
     }
 
-
-
-}
-
-public function destroy($id)
-{
-    try {
+    public function destroy($id)
+    {
+        try {
         // Find the appointment by ID
-        $appointment = Appointment::findOrFail($id);
+            $appointment = Appointment::findOrFail($id);
         
         // Delete the appointment
         $appointment->delete();
         
-        return redirect('/user-appointments')->with('success', 'Appointment deleted successfully!');
-    } catch (\Exception $e) {
+            return redirect('/user-appointments')->with('success', 'Appointment deleted successfully!');
+        } catch (\Exception $e) {
         // Redirect back with an error message
         return redirect()->back()->with('error', 'An error occurred while deleting the appointment. Please try again later.');
-    }
-}
+        }
+    }   
 
 }

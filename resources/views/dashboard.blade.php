@@ -24,7 +24,7 @@
                     <div class="admin_links">
                         <div class="admin_sub_links">
                             <!-- Added IDs to the links -->
-                            <a class="mug" href="#" id="showAppointments">Table</a>
+                            <a class="mug" href="#" id="showAppointments">Appointments</a>
                         </div>
                         <div class="admin_sub_links">
                             <a class="mug" href="#" id="showUsers">Users List</a>
@@ -32,58 +32,86 @@
                     </div>
                 </div>
             </div>
-            <div class="admin_sub" id="appointmentsTable"> <!-- Added ID to the appointments table -->
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr class="">
-                            <th scope="col">Vehicle Name</th>
-                            <th scope="col">Vehicle Mileage</th>
-                            <th scope="col">Appointment Date</th>
-                            <th scope="col">Preferred Time</th>
-                            <th scope="col">Preferred Service</th>
-                            <th scope="col">Comment</th>
-                            {{-- <th scope="col">Action</th> --}}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($appointments as $appointment)
-                            <tr class="de">
-                                <td>{{ $appointment->vehicle_name }}</td>
-                                <td>{{ $appointment->vehicle_mileage }}</td>
-                                <td>{{ $appointment->appointment_date }}</td>
-                                <td>{{ $appointment->preferred_time }}</td>
-                                <td>{{ $appointment->preferred_way }}</td>
-                                <td>{{ $appointment->comment }}</td>
-                                {{-- <td class="halo"> --}}
-                                {{-- <button>View</button> --}}
-                                {{-- </td> --}}
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="admin_sub" id="usersTable" style="display:none;">
-                <!-- Added ID to the users table and set display:none -->
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr class="">
-                            <th scope="col">Username</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone Number</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($appointments as $appointment)
-                            <tr class="de">
-                                <td>{{ $appointment->customer_name }}</td>
-                                <td>{{ $appointment->customer_email }}</td>
-                                <td>{{ $appointment->customer_phone }}</td>
 
+            @if ($appointments->isEmpty())
+
+                <div class="empty">
+
+                    <div class="imger_sect">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.QmRQ4D64Pm2LEUKNUwzu3QHaHa&pid=Api&P=0&h=220"
+                            alt="">
+                    </div>
+                    <p>No appointments found.</p>
+
+                </div>
+            @else
+                <div class="admin_sub" id="appointmentsTable"> <!-- Added ID to the appointments table -->
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr class="">
+                                <th scope="col">Vehicle Name</th>
+                                <th scope="col">Vehicle Mileage</th>
+                                <th scope="col">Appointment Date</th>
+                                <th scope="col">Preferred Time</th>
+                                <th scope="col">Preferred Service</th>
+                                <th scope="col">Comment</th>
+                                {{-- <th scope="col">Action</th> --}}
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            @foreach ($appointments as $appointment)
+                                <tr class="de">
+                                    <td>{{ $appointment->vehicle_name }}</td>
+                                    <td>{{ $appointment->vehicle_mileage }}</td>
+                                    <td>{{ $appointment->appointment_date }}</td>
+                                    <td>{{ $appointment->preferred_time }}</td>
+                                    <td>{{ $appointment->preferred_way }}</td>
+                                    <td>{{ $appointment->comment }}</td>
+                                    {{-- <td class="halo"> --}}
+                                    {{-- <button>View</button> --}}
+                                    {{-- </td> --}}
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @endif
+            @if ($appointments->isEmpty())
+
+                <div class="empty">
+
+                    <div class="imger_sect">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.QmRQ4D64Pm2LEUKNUwzu3QHaHa&pid=Api&P=0&h=220"
+                            alt="">
+                    </div>
+                    <p>No Users found.</p>
+
+                </div>
+            @else
+                <div class="admin_sub" id="usersTable" style="display:none;">
+                    <!-- Added ID to the users table and set display:none -->
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr class="">
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($appointments as $appointment)
+                                <tr class="de">
+                                    <td>{{ $appointment->customer_name }}</td>
+                                    <td>{{ $appointment->customer_email }}</td>
+                                    <td>{{ $appointment->customer_phone }}</td>
+
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @endif
+
         </div>
     </div>
 

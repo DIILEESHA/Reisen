@@ -48,12 +48,31 @@ class AppointmentController extends Controller
 
         // Create and save the appointment
         $appointment = Appointment::create($validatedData);
-
         return redirect('/user-appointments')->back()->with('success', 'Appointment booked successfully!');
     } catch (\Exception $e) {
         // \Log::error($e->getMessage());
         // Redirect back with an error message
         return redirect()->back()->with('error', 'An error occurred while booking the appointment. Please try again later.');
     }
+
+
+
 }
+
+public function destroy($id)
+{
+    try {
+        // Find the appointment by ID
+        $appointment = Appointment::findOrFail($id);
+        
+        // Delete the appointment
+        $appointment->delete();
+        
+        return redirect('/user-appointments')->with('success', 'Appointment deleted successfully!');
+    } catch (\Exception $e) {
+        // Redirect back with an error message
+        return redirect()->back()->with('error', 'An error occurred while deleting the appointment. Please try again later.');
+    }
+}
+
 }

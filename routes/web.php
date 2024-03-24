@@ -52,6 +52,8 @@ Route::get('/user-appointments', function () {
 
 Route::post('/book-an-appointment', [AppointmentController::class, 'store'])->name('appointments.store');
 Route::get('/user-appointments', [AppointmentController::class, 'showAppointments'])->name('user.appointments');
+Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+
 // login form get controller
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');

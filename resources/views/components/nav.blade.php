@@ -108,10 +108,17 @@
                     @auth
                     <li class="nav_li"><a class="linka" href="/book-an-appointment">Appointment</a></li>
                     <li class="nav_li">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit" class="linka">Logout</button>
-                        </form>
+                        <span class="username" onclick="togglePopup()"> <!-- Added onclick event -->
+                            {{ Auth::user()->name }} <i class="fa-solid fa-caret-down"></i>
+                        </span>
+                        <!-- Popup content -->
+                        <div class="popuper" id="popup">
+                            <a class="muy" href="/user-appointments">My Appointments</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="muyt" type="submit">Logout</button>
+                            </form>
+                        </div>
                     </li>
                     @else
                     <li class="nav_li"><a class="linka" href="/login">Log In</a></li>
@@ -151,6 +158,22 @@
                 });
             });
         });
+    </script>
+    <script>
+        function togglePopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.toggle("show");
+        }
+    
+        // Close the popup if the user clicks outside of it
+        window.onclick = function(event) {
+            var popup = document.getElementById("popup");
+            if (!event.target.matches('.username')) {
+                if (popup.classList.contains('show')) {
+                    popup.classList.remove('show');
+                }
+            }
+        }
     </script>
 </body>
 

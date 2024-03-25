@@ -102,4 +102,34 @@ class AuthController extends Controller
          return redirect('/')->with('success', 'You have been logged out.');
      }
 
+     // Update user profile including password
+public function updateProfile(Request $request)
+{
+    try {
+        $validatedData = $request->validate([
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . Auth::id(),
+            'password' => 'nullable|string|min:8', 
+        ]);
+
+        $user = Auth::user();
+
+        // Update username and email
+        $user->name = $validatedData['username'];
+        $user->email = $validatedData['email'];
+
+        // Update password if provided
+        if ($request->has('password')) {
+            $user->password = bcrypt($validatedData['password']);
+        }
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'Profile updated successfully!');
+    } catch (\Exception $e) {
+        return redirect()->back()->withInput()->withErrors(['error' => 'Error occurred while updating profile']);
+    }
+}
+
+
 }

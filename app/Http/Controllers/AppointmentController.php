@@ -32,6 +32,7 @@ class AppointmentController extends Controller
     {
         // Only authenticated users can access this route
         if (Auth::check()) {
+            
             return view('pages.appointment');
         } else {
             // Redirect to the login page if the user is not authenticated

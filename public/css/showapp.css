@@ -150,3 +150,41 @@
     font-weight: 500;
     color: #bf2d0d;
 }
+.user_section {
+}
+
+.usera {
+    display: flex;
+    flex-direction: column;
+}
+
+.usera input {
+    border: 1px solid #b8b5b5;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-family: "poppoins", sans-serif;
+    font-size: 15px;
+}
+
+.submita {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submita button {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #bf2d0d;
+    color: #ddd;
+    font-size: 16px;
+    font-family: "poppoins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

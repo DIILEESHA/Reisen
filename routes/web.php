@@ -84,3 +84,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // signup form get controller
 Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
 Route::post('/signup', [AuthController::class, 'signup']);
+
+// UPDATE USER PROFILE DETAILS
+Route::post('/update-profile', [AuthController::class, 'updateProfile'])->name('update-profile');

@@ -16,7 +16,7 @@
         <div class="footer-sub">
 
             <div class="footer_logo">
-                <img src="/img/Logotype.png" alt="">
+                <img src="/img/Logotype2.png" alt="">
             </div>
             <p class="footer_para">You get to enjoy a super fast and hassle free delivery. Additionaly, upon delivering
                 the wheels & tires, we offer free installation.</p>

@@ -62,7 +62,8 @@
                                 <tr class="de">
                                     <td>{{ $appointment->vehicle_name }}</td>
                                     <td>{{ $appointment->vehicle_mileage }}</td>
-                                    <td>{{ $appointment->appointment_date }}</td>
+                                    <td>{{ date('Y-m-d', strtotime($appointment->appointment_date)) }}</td>
+
                                     <td>{{ $appointment->preferred_time }}</td>
                                     <td>{{ $appointment->preferred_way }}</td>
                                     <td>{{ $appointment->comment }}</td>

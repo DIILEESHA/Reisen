@@ -45,7 +45,7 @@
 
                 </div>
             @else
-                <div class="admin_sub" id="appointmentsTable"> <!-- Added ID to the appointments table -->
+                <div class="admin_sub" id="appointmentsTable"> 
                     <table class="table">
                         <thead class="thead-dark">
                             <tr class="">
@@ -55,7 +55,6 @@
                                 <th scope="col">Preferred Time</th>
                                 <th scope="col">Preferred Service</th>
                                 <th scope="col">Comment</th>
-                                {{-- <th scope="col">Action</th> --}}
                             </tr>
                         </thead>
                         <tbody>

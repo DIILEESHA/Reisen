@@ -9,7 +9,6 @@
 }
 
 .admin_grid {
-    /* padding: 10px; */
     display: grid;
     gap: 0.7rem;
     grid-template-columns: 0.4fr 2fr;

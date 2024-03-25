@@ -43,7 +43,9 @@
     </div>
     <div class="appointement">
         <h2>MAKE AN APPOINTMENT NOW WITH OUR ONLINE FORM</h2>
-        <button class="apoint_btn" title="make an appointment">make an appointment</button>
+        {{-- <button class="apoint_btn" title="make an appointment">make an appointment</button> --}}
+        <button class="apoint_btn" title="make an appointment" onclick="window.location='{{ route('appointments.form') }}'">make an appointment</button>
+
     </div>
 </body>
 

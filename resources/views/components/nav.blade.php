@@ -104,24 +104,24 @@
                     </li>
                     <li class="nav_li">
                         <a class="linka" href="/contact-us">Contact us</a>
-                    </li>  
-                    @auth
-                    <li class="nav_li"><a class="linka" href="/book-an-appointment">Appointment</a></li>
-                    <li class="nav_li">
-                        <span class="username" onclick="togglePopup()"> <!-- Added onclick event -->
-                            {{ Auth::user()->name }} <i class="fa-solid fa-caret-down"></i>
-                        </span>
-                        <!-- Popup content -->
-                        <div class="popuper" id="popup">
-                            <a class="muy" href="/user-appointments">My Appointments</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button class="muyt" type="submit">Logout</button>
-                            </form>
-                        </div>
                     </li>
+                    @auth
+                        <li class="nav_li"><a class="linka" href="/book-an-appointment">Appointment</a></li>
+                        <li class="nav_li">
+                            <span class="username" onclick="togglePopup()"> <!-- Added onclick event -->
+                                {{ Auth::user()->name }} <i class="fa-solid fa-caret-down"></i>
+                            </span>
+                            <!-- Popup content -->
+                            <div class="popuper" id="popup">
+                                <a class="muy" href="/user-appointments">My Appointments</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button class="muyt" type="submit">Logout</button>
+                                </form>
+                            </div>
+                        </li>
                     @else
-                    <li class="nav_li"><a class="linka" href="/login">Log In</a></li>
+                        <li class="nav_li"><a class="linka" href="/login">Log In</a></li>
                     @endauth
                 </ul>
             </div>
@@ -154,7 +154,7 @@
                     // Delay navigation by 2 seconds
                     setTimeout(function() {
                         window.location.href = href;
-                    }, 1500); // 2 seconds delay
+                    }, 700); // 2 seconds delay
                 });
             });
         });
@@ -164,7 +164,7 @@
             var popup = document.getElementById("popup");
             popup.classList.toggle("show");
         }
-    
+
         // Close the popup if the user clicks outside of it
         window.onclick = function(event) {
             var popup = document.getElementById("popup");

@@ -67,6 +67,8 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard', [AppointmentController::class, 'showAppointment'])->name('dashboard');
 Route::post('/book-an-appointment', [AppointmentController::class, 'store'])->name('appointments.store');
 Route::get('/user-appointments', [AppointmentController::class, 'showAppointments'])->name('user.appointments');
+Route::get('/book-an-appointment', [AppointmentController::class, 'showAppointmentForm'])->name('appointments.form');
+
 Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 Route::get('/appointments/{id}/edit-your-appointment', [AppointmentController::class, 'showEditForm'])->name('appointments.edit');
 Route::put('/appointments/{id}', [AppointmentController::class, 'update'])->name('appointments.update');

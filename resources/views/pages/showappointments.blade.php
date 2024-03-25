@@ -49,7 +49,7 @@
                     </div>
                     <div class="sub_links">
                         <h2>
-                            <a class="linka" href="/">
+                            <a   class="linka" href="/">
                                 logout
                             </a>
                         </h2>
@@ -96,7 +96,9 @@
                                             <i class="fa-solid fa-ellipsis-vertical"
                                                 onclick="togglePopupMenu(this)"></i>
                                             <div class="popup-menu-content">
-                                                <a href="{{ route('appointments.edit', $appointment->id) }}">Edit</a>
+                                                {{-- <a href="{{ route('appointments.edit', $appointment->id) }}">Edit</a> --}}
+                                                <a href="{{ route('appointments.edit', ['id' => $appointment->id]) }}">Edit</a>
+
                                                 <a href="#"
                                                     onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this appointment?')) { document.getElementById('delete-form-{{ $appointment->id }}').submit(); }">Delete</a>
                                                 <form id="delete-form-{{ $appointment->id }}"

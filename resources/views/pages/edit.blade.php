@@ -28,7 +28,9 @@
     </div>
     <div class="appointement_container">
         <h1 class="customer_title">EIDT AN APPOINTMENT</h1>
-        <form action="{{ route('appointments.update', $appointment->id) }}" method="POST" class="">
+        {{-- <form action="{{ route('appointments.update', $appointment->id) }}" method="POST" class=""> --}}
+            <form action="{{ route('appointments.update', ['id' => $appointment->id]) }}" method="POST">
+
             @csrf
             @method('PUT')
             <div class="appointment_form">

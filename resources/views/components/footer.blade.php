@@ -25,13 +25,22 @@
         <div class="footer-sub">
             <h2 class="footer_name">links</h2>
             <ul class="footer_ul">
-                <li class="footer_li">home</li>
-                <li class="footer_li">about</li>
+                <li class="footer_li">Home</li>
                 <li class="footer_li">
-                    appointments
+                    <a style="text-decoration:none;color:inherit" href="/about-us">
+                        About
+                    </a>
+                </li>
+                <li class="footer_li"
+                    onclick="window.location='{{ route('appointments.form') }}'>
+
+                    Appointments
                 </li>
                 <li class="footer_li">
-                    gallery
+                    <a style="text-decoration:none;color:inherit"  href="/gallery">
+
+                        Gallery
+                    </a>
                 </li>
             </ul>
         </div>

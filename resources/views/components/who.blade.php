@@ -16,11 +16,15 @@
                 <div class="disco">
                     <h2 class="boo">welcome</h2>
                     <h2 class="who">who we are</h2>
-                    <p class="who_para">Alloys are mixtures of a metal and other elements. They generally provide greater strength over
+                    <p class="who_para">Alloys are mixtures of a metal and other elements. They generally provide
+                        greater strength over
                         pure metals, which are usually much softer and more ductile. Alloys of aluminium or magnesium
                         are typically lighter.</p>
-
-                    <button class="who_btn">learn more</button>
+                    <button class="who_btn">
+                        <a style="text-decoration: none;color:inherit" href="/about-us">
+                            learn more
+                        </a>
+                    </button>
                 </div>
             </div>
         </div>

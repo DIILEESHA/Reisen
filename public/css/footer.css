@@ -1,5 +1,5 @@
 .footer_container {
-    background-color: #393939;
+    background-color: #333;
     display: grid;
     grid-template-columns: 1fr 0.6fr 1fr 1fr;
     gap: 1rem;
@@ -21,17 +21,18 @@
 .footer_ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 .footer_li,
 .footer_para {
-    list-style: circle;
+list-style: none;
     color: #bebaba;
     font-size: 15px;
 }
 
 .footer_para {
     width: 80%;
+    line-height: 150%;
 }
 
 .inputo {

@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="/css/appointement.css">
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -122,6 +125,12 @@
             }
         });
     </script>
+        <script>
+            flatpickr("#appointment_date", {
+                dateFormat: "Y-m-d",
+            });
+        </script>
+        
 </body>
 
 </html>
